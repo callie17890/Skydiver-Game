@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Game</title>
+		<script src="javascript/menu.js"></script>
+		<script src="javascript/game.js"></script>
+		<script src="javascript/end.js"></script>
+		<script src="javascript/level2.js"></script>
+		<script src="javascript/level3.js"></script>
+		<script src="javascript/win.js"></script>
+		<script src="javascript/phaser.min.js"></script>
+		<style>
+			body {
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: center;
+				align-items: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="container"></div>
+
+		<script type="text/javascript">
+		window.onload = function() {
+			var game = new Phaser.Game(900, 600, Phaser.AUTO, 'container');
+
+			game.state.add('menu', Skydiver.menu);
+			game.state.add('game', Skydiver.game);
+			game.state.add('end', Skydiver.end);
+			game.state.add('level2', Skydiver.level2);
+			game.state.add('level3', Skydiver.level3);
+			game.state.add('win', Skydiver.win);
+			game.state.start('menu');
+		}
+		</script>
+
+	</body>
+<html>
